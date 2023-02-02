@@ -1,0 +1,65 @@
+Error deserializacion de la API
+
+Newtonsoft.Json.JsonSerializationException
+  HResult=0x80131500
+  Message=Cannot deserialize the current JSON object (e.g. {"name":"value"}) into type 'System.Collections.Generic.IEnumerable`1[Dam.Proyecto.Domain.Entities.API.Events]' because the type requires a JSON array (e.g. [1,2,3]) to deserialize correctly.
+To fix this error either change the JSON to a JSON array (e.g. [1,2,3]) or change the deserialized type so that it is a normal .NET type (e.g. not a primitive type like integer, not a collection type like an array or List<T>) that can be deserialized from a JSON object. JsonObjectAttribute can also be added to the type to force it to deserialize from a JSON object.
+Path 'totalItems', line 1, position 14.
+  Source=Newtonsoft.Json
+  StackTrace:
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Dam.Proyecto.DataAccessLayer.ServiceProvider.EventosApiProvider.<GetEventosEusData>d__2.MoveNext() in C:\Users\cchapoval\source\repos\Dam.Proyecto\Dam.Proyecto.DataAccessLayer\ServiceProvider\EventosApiProvider.cs:line 43
+
+  This exception was originally thrown at this call stack:
+    [External Code]
+    Dam.Proyecto.DataAccessLayer.ServiceProvider.EventosApiProvider.GetEventosEusData() in EventosApiProvider.cs
+
+Solucion:
+Los datos estaban compuestos por un NestedJson. la solucion fue cambiar la forma de deserializarlos
+
+====================================================================================================
+
+Unable to resolve service for type 'Microsoft.EntityFrameworkCore.Migrations.IMigrator'. This is often because no database provider has been configured for this DbContext.
+A provider can be configured by overriding the 'DbContext.OnConfiguring' method or by using 'AddDbContext' on the application service provider. 
+If 'AddDbContext' is used, then also ensure that your DbContext type accepts a DbContextOptions<TContext> object in its constructor and 
+passes it to the base constructor for DbContext.
+
+Solucion:
+El DbCOntext con su  debe ser declarado en el Host, ademas de en la propia clase y en el IoCC
+
+====================================================================================================
+Error de conflicto por el uso de DbContext simultaneo
+
+InvalidOperationException: A second operation started on this context before a previous operation completed. Any instance members are not guaranteed to be thread safe.
+Microsoft.EntityFrameworkCore.Internal.ConcurrencyDetector.EnterCriticalSection()
+
+Solucion:
+make sure to register your DbContext as Transient.
+https://stackoverflow.com/questions/48767910/entity-framework-core-a-second-operation-started-on-this-context-before-a-previ
+
+====================================================================================================
+Error al hacer el Update de la tabla Eventos
+
+Microsoft.EntityFrameworkCore.DbUpdateException: 'Required properties '{'ImageData', 'ImageTitle'}' are missing for the instance of entity type 'Image'. 
+Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see the entity key value.'
+
+Solucion: 
+establecer las relaciones entre tablas y modificar el repositorio que trabaja con dichas tablas.
+Modificar el atributo Imagenes en la Tabla y asignar las claves an ambas tablas:
+
+public IList<ImagesTable>? Images { get; } = new List<ImagesTable>();       // Collection navigation
+
+En DbContext, Metodo OnModelCreating()
+adefinir la relacion entre tablas:
+modelBuilder.Entity<ImagesTable>().HasOne(p => p.EventoEuskadiTable).WithMany(b => b.Images);
+https://www.entityframeworktutorial.net/efcore/conventions-in-ef-core.aspx
+
+En el repositorio de la clase:
+var result = _context.Set<EventoEuskadiTable>().Include(h => h.Images);
+
+====================================================================================================

@@ -1,0 +1,22 @@
+=================================================
+*	Para conectar con una Base de Datos	*		
+=================================================
+Si la DB existe:
+En VisualStudio, desde el explorador de servidores (VS), crear una nueva conexion para Microsoft Sql server
+Si la DB esta en nuestro ordenador: 	
+		Nombre del Servidor: localhost
+		Seleccionar:Autenticacion de SqlServer (user + pass)
+		Buscar nombre base de datos y hacer prueba de conexion
+
+En propiedades de la bbdd, buscar el connectionString: "Data Source=localhost;Initial Catalog=BBDD;Persiste Security Info = True; User ID= Usuario; Password= 1234"
+
+En la solucion, agregar en el Json, en contenedor y dbContext el string de conectionString
+
+=============================================
+ 	En el contenedor
+=============================================
+builder.Services.AddDbContext<DamDbContext>(options => 
+	{
+	     options.UseSqlServer(builder.Configuration.GetConnectionString("AppConnection")
+	});
+____________________________________________________________________________________________

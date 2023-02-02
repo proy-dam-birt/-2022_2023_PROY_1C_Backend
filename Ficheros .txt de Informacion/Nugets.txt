@@ -1,0 +1,75 @@
+=============================================================================================
+Nugets
+=============================================================================================
+DAM
+                                Ben.Demystifier (0.4.1)
+								High performance understanding for stack traces (Make error logs more productive)
+                                Microsoft.EntityFrameworkCore (7.0.0)
+								Entity Framework Core is a modern object-database mapper for .NET. It supports LINQ queries, 
+								change tracking, updates, and schema migrations. EF Core works with SQL Server, Azure SQL Database, 
+								SQLite, Azure Cosmos DB, MySQL, PostgreSQL, and other databases through a provider plugin API.
+                                Microsoft.EntityFrameworkCore.Design (7.0.0)
+								Shared design-time components for Entity Framework Core tools.
+                                Microsoft.Extensions.Hosting (7.0.0)
+								Hosting and startup infrastructures for applications.
+                                Microsoft.VisualStudio.Azure.Containers.Tools.Targets (1.14.0)
+								Targets files to enable the Visual Studio Tools for Containers.
+                                NLog (5.0.5)
+								NLog is a logging platform for .NET with rich log routing and management capabilities.
+								NLog supports traditional logging, structured logging and the combination of both.
+                                Quartz (3.5.0)
+								Quartz Scheduling Framework for .NET
+_______________________________________________________________________________________________
+Dam.Proyecto.Configuracion
+                                No tiene
+_______________________________________________________________________________________________
+Dam.Proyecto.DataAccessLayer
+                                Ben.Demystifier (0.4.1)
+								High performance understanding for stack traces (Make error logs more productive)
+                                Microsoft.AspNetCoreHttp.Abstractions (2.2.0)
+								ASP.NET Core HTTP object model for HTTP requests and responses and also 
+								common extension methods for registering middleware in an IApplicationBuilder.
+								Commonly used types:
+									Microsoft.AspNetCore.Builder.IApplicationBuilder
+									Microsoft.AspNetCore.Http.HttpContext
+									Microsoft.AspNetCore.Http.HttpRequest
+									Microsoft.AspNetCore.Http.HttpResponse
+                                Microsoft.EntityFrameworkCore.InMemory (7.0.0)
+								In-memory database provider for Entity Framework Core (to be used for testing purposes).
+                                Microsoft.EntityFrameworkCore.SqlServer (7.0.0)
+								Microsoft SQL Server database provider for Entity Framework Core.
+                                Microsoft.EntityFrameworkCore.Tools (7.0.0)
+								Entity Framework Core Tools for the NuGet Package Manager Console in Visual Studio.
+								Enables these commonly used commands:
+									Add-Migration
+									Bundle-Migration
+									Drop-Database
+									Get-DbContext
+									Get-Migration
+									Optimize-DbContext
+									Remove-Migration
+									Scaffold-DbContext
+									Script-Migration
+									Update-Database
+				Microsoft.EntityFrameworkCore (7.0.0)
+								Entity Framework Core is a modern object-database mapper for .NET. It supports LINQ queries, 
+								change tracking, updates, and schema migrations. EF Core works with SQL Server, Azure SQL Database, 
+								SQLite, Azure Cosmos DB, MySQL, PostgreSQL, and other databases through a provider plugin API.
+                                Newtonsoft.Json (13.0.1)
+								Json.NET is a popular high-performance JSON framework for .NET
+                                NLog (5.0.5)
+								NLog is a logging platform for .NET with rich log routing and management capabilities.
+								NLog supports traditional logging, structured logging and the combination of both.
+_______________________________________________________________________________________________
+Dam.Proyecto.Domain
+                                no tiene
+_______________________________________________________________________________________________
+
+Dam.Proyecto.ServiceLayer
+                                Automapper (12.0.0)
+                                Ben.Demystifier (0.4.1)
+                                NLog (5.0.5)
+_______________________________________________________________________________________________
+Dam.Proyecto.WebAPI
+                                Microsoft.EntityFrameworkCore (6.0.10)
+                                Swashbuckle.AspNetCore (6.2.3)

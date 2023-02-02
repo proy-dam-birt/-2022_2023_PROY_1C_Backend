@@ -1,0 +1,91 @@
+
+            PROVISIONAL  - En Pruebas
+
+  Estoy probando las diferentes maneras de comentar para poden sacar o un XML o un HTML con la documentacion
+  para este proyecto.
+  (Carol)
+
+==============================================
+	Para las clases e Interfaces
+==============================================    
+    /// <summary>
+    /// Class: 
+    /// Herencia: 
+    /// 
+    /// 
+    /// <summary>
+
+--------------------------------------
+	ejemplo
+--------------------------------------
+    /// <summary>
+    /// Class: DamDbContext
+    /// Herencia: DbContext
+    /// 
+    /// Enlaza el codigo en C# con la base de datos
+    /// Un constructor.
+    /// Metodos: Todas las operaciones  CRUD, 
+    ///                                 Commit y Rollback
+    ///                                 conexion con la base de datos
+    /// Una instancia de DbContext representa una sesión con la base de datos y se puede usar para consultar y guardar
+    /// instancias de las entidades. 
+    /// DbContext es una combinación de los patrones Unit Of Work y Repository.
+    /// Se crea una clase que deriva de DbContext y contiene DbSet<TEntity> propiedades para cada entidad del modelo.
+    /// Si las DbSet<TEntity> propiedades tienen un establecedor público, se inicializan automáticamente cuando se crea
+    /// la instancia del contexto derivado.
+    /// 
+    /// Mas informacion: https://learn.microsoft.com/es-es/dotnet/api/microsoft.entityframeworkcore.dbcontext?view=efcore-6.0
+    /// <summary>
+
+    o bien:
+    
+    /// <Class name=""></Class>
+    /// <Herencia name=""></Herencia>
+    /// <summary>
+    /// Informacion 
+    /// <summary>
+
+
+======================================
+	Para los metodos
+======================================
+    /// <summary>
+    /// Method: 
+    /// Access: 
+    /// 
+    /// 
+    /// 
+    /// @param  
+    /// @return 
+    /// <summary>
+
+---------------------------------------
+	ejemplo
+---------------------------------------
+
+/// <summary>
+/// Method: ExecuteAsyn()
+/// Access: protected
+/// 
+/// Lanza la Ejecucion de los trabajos programados
+/// 
+/// @param  CancellationToken stoppingToken
+/// @return 
+/// <summary>
+/// <returns></returns>
+
+
+ o bien:
+ /// <method name=""></method>
+ /// <access type=""></access>
+ /// <summary></summary>
+ /// <param></param>
+ /// <returns><//returns>
+
+
+
+
+
+
+
+================================================= 

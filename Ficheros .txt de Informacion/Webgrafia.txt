@@ -1,0 +1,61 @@
+APIs de Open Data Euskadi
+
+Eventos
+"https://api.euskadi.eus/culture/events/v1.0/events"
+
+Restaurantes, asadores y sidrerias
+"https://www.opendata.euskadi.eus/contenidos/ds_recursos_turisticos/restaurantes_asador_sidrerias/opendata/restaurantes.json"
+
+Quartz
+https://www.quartz-scheduler.net/
+https://stackabuse.com/guide-to-quartz-with-spring-boot-job-scheduling-and-automation/
+https://programmerclick.com/article/64091562369/
+
+
+DbContext
+https://learn.microsoft.com/es-es/dotnet/api/microsoft.entityframeworkcore.dbcontext?view=efcore-6.0
+
+UnitOfWork in Repository Pattern
+https://dotnettutorials.net/lesson/unit-of-work-csharp-mvc/#:~:text=The%20unit%20of%20work%20in%20C%23%20implementation%20manages,
+the%20effective%20implementation%20of%20the%20Repository%20Design%20Pattern.
+
+
+Para el almacenamiento de imagenes
+http://www.binaryintellect.net/articles/2f55345c-1fcb-4262-89f4-c4319f95c5bd.aspx
+
+
+Entity Framework Core In-memory DB
+https://www.youtube.com/watch?v=JKytAdsWaQs
+https://www.youtube.com/watch?v=2jj2wH60QuE  ver IAMRimCorey
+
+Deserialize Json Data using Newtonsoft
+https://learn.microsoft.com/en-us/dotnet/standard/serialization/system-text-json/how-to?pivots=dotnet-6-0
+Serial de videos de Software Nuggets: https://youtu.be/iSFuVJgwf5Q
+
+OpenWebinars
+Cursos:
+Curso de Arquitectura de Aplicaciones con .NETCore
+Curso de Arquitectura Limpia con .NET
+Taller MVC con C# Core y Asp.net: Instalación de la plataforma
+Taller MVC con C# Core y Asp.net: Patrón MVC
+
+Migraciones (03.11.22)
+https://entityframeworkcore.com/migrations
+
+Gráfico de dependencia de proyectos de Visual Studio   (Solo disponible en la version enterprise)
+https://learn.microsoft.com/en-us/visualstudio/modeling/directed-graph-markup-language-dgml-reference?view=vs-2022
+Instalar=> - Code Map
+	   - Live Dependency Validation
+
+Instalación del mapa de código y la validación de dependencias dinámicas
+https://learn.microsoft.com/es-es/visualstudio/modeling/install-architecture-tools?view=vs-2022
+
+Webs recurrentes
+https://dotnettutorials.net/lesson/todictionary-method/ 
+https://jasontaylor.dev/clean-architecture-getting-started/ 
+https://itnext.io/background-workers-in-net-core-api-f6fac7a5477f(09.11.2022)
+https://lbaigorria.com/2016/09/16/contenedor-de-inversion-de-control-ioc-container/#:~:text=Un%20Contenedor%20de%20Inversi%C3%B3n%20de%20Control%20%28IoC%20Container%29,
+aplicaci%C3%B3n%20y%20olvidar%20sus%20dependencias%20hacia%20otras%20clases.
+
+Entity Framework Tutorial
+https://www.entityframeworktutorial.net/efcore/one-to-many-conventions-entity-framework-core.aspx

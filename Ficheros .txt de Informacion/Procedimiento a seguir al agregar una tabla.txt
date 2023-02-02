@@ -1,0 +1,38 @@
+El procedimiento a seguir para agregar una tabla es el siguiente:
+En cada paso de indica la nomenclatura a seguir.
+
+
+1.- Las Tablas se agregan en el proyecto Dam.Proyecto.Domain
+    Path: Dam.Proyecto.Domain/Entities/DB
+    Nomenclatura: XxxTable.cs
+
+2.- Se agregan los correspondientes repositorios en el proyecto Dam.Proyecto.DataAccessLayer
+     a) IRepositories
+            Path: Dam.Proyecto.DataAccessLayer/Interfaces/IRepositories  
+            Nomenclatura de la Interface:  IXxxRepository.cs
+            Herencia: IGenericRepository<nombre de la tabla>
+            Nota: Asegurarse de que sea public
+
+     b) Repositories 
+            Path: Dam.Proyecto.DataAccessLayer/Repositories  
+            Nomenclatura de la repositorio: XxxRepository.cs
+            Herencia: GenericRepository<nombre de la tabla>, IXxxRepository 
+            Ctor: public EventosEuskadiRepository(DamDbContext context) : base(context) {}
+            Nota: Asegurarse de que sea public
+
+3.- Se los declara en UnitOfWorks
+     a) En la interface
+            Path: Dam.Proyecto.DataAccessLayer/Interfaces/IRepositories/IUnitOfWorks.cs
+            Nomenclatura y declaracion: IXxxxRepository XxxRepo { get;}
+
+     b) En la Implementacion
+            Path: Dam.Proyecto.DataAccessLayer/Repositories/UnitOfWorks.cs
+            Declaracion : public IXxxRepository XxxRepo { get; private set; }
+            En Ctor: XxxRepo = new XxxRepository(_context);
+
+4.-  Definicion como propiedad en la clase DbContext 
+     Path: Dam.Proyecto.DataAccessLayer/DamDbContext.cs
+     Declaracion: public DbSet<XxxTable> XxxTable { get; set; }
+
+5.- Verificar si se necesita Mapeo, en su caso incorporarlo a la clase mapping que corresponda
+    

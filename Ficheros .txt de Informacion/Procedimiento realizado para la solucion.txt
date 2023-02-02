@@ -1,0 +1,59 @@
+Procedimiento
+
+1./ Crear Clase WorkerService que sera la entrada al proyecto
+    	Agregar los Nugets que ya sabemos que utilizaremos (ver tabla).
+
+2./ Crear Clase Libreria Domain para definir las entidades. Domain no conoce de las demas capas.
+	Crear la carpeta Entities y dentro de esta, las carpetas  API, BD y Ent
+	En API ponemos los DTO relacionados con las API de las que vamos a descargar los datos.
+	    	Pblma: normalmente las clases se crean como internal, ponerlas como publicas
+	En DB ponemos las tablas.
+	En Ent ponemos las entidades base
+
+3./ Crear Clase Libreria DAL: Data Access Layer, que sera la capa encargada de procesar los datos a traves de los repositorios.
+	Agregar los Nugets que ya sabemos que utilizaremos (ver tabla).
+	Crear las carpetas para las Interfaces de IRepositories e IServicesProvider
+	Crear las carpetas para los Repositorios y Servicios
+	Crear la Clase DbContext para el manejo de los repositorios y definimos un tipo de persistencia, en este caso trabajaremos con In-Memory 
+para realizar las pruebas y no depender de una conexion real con una Base de Datos 
+	Creamos las interfaces y clases generales del repositorio generico(GenericRepository) y la unidad de trabajo (UnitOfWork)
+
+	Creamos una interface y una clase por cada tabla creada y aplicamos el "procedimiento a seguir cuando agregamos una tabla".
+
+	Hay que incluir las clases en el IoCContenedor que se encuientra en la clase Worker Service
+
+	Realizar las conexiones con la base de datos que corresponda
+		Verificar 
+			DamDbContext
+			Host
+			IoCC
+ 
+	Realizamos la Migracion y se crea la carpeta Migrations con los archivos correspondientes.
+
+4./ Crear Clase Libreria SL: Service Layer, que sera la encargada de realizar las lanzar las peticiones a DAL
+	Agregar los Nugets que ya sabemos que utilizaremos (ver tabla).
+	Crear las carpetas para los Interfaces, Servicios y Automapping
+	Crear los servicios que se necesiten (Interface y Clase) y Automapping . Agregar en IoCC.
+
+
+5./ Agregar los proveedores de servicios en DAL (Interface y Clase), y agregar en IoCC
+
+6./ Crear Clase Libreria Configuration. En este proyecto se definiran las configuraciones.
+	Crear las Carpetas Config y Model
+	Model contendra:
+		la clase que definira la lista de trabajo programables.
+		los settings de las APis a consultar
+		la configuracion de servicios Smtp
+
+7./ Definir los trabajos a realizar 
+	a) Crear la carpeta ScheduledJob que contendra los trabajos programados a realizar	
+    	b) Agregar el codigo para la definicion de los tipos Ijob: class ScheduledJobFactory
+	c) Agregar al IoCC
+
+8./ Agregar un nueva tabla para gestionar la descarga de oferta de servicios de gastronomia inscritos en OpenData Euskadi
+	Realizar el procedimiento al agregar una nueva tabla
+	Crear servicio, proveedor y trabajo para realizar la descarga y guardado de los datos.
+    
+9./ Crear carpeta Controller en SL para gestionar los endpoints.
+
+10./ Establecer relaciones entre las tablas. Implica realizar agregados en los repositorios y DbContext

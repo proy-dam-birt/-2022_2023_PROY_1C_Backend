@@ -1,0 +1,5 @@
+Para hacer los Endpoints
+
+Agregar extension UseOpenApi 
+		=> Agregar en el contenedor 
+		=> Agregar en el pipeline
